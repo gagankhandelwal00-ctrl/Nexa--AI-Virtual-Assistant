@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexa — AI Virtual Assistant</title>
+    <link rel="shortcut icon" href="Assistant logo.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="particles"></div>
+
+    <button class="theme-btn" id="themeBtn"><i class="fas fa-moon"></i></button>
+
+    <div class="app">
+
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-wrap">
+                <div class="avatar-ring">
+                    <img src="Assistant logo.jpeg" alt="Nexa" id="logo" onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';">
+                    <div class="avatar-inner" id="logoFallback">N</div>
+                </div>
+                <div class="ring r1"></div>
+                <div class="ring r2"></div>
+            </div>
+            <div class="header-info">
+                <h1>Hi, I'm <span class="grad">Nexa</span></h1>
+                <p class="sub">Your AI-Powered Virtual Assistant</p>
+                <div class="status-row">
+                    <span class="dot" id="dot"></span>
+                    <span id="statusText">Ready to assist</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat -->
+        <div class="chat-box" id="chatBox">
+            <div class="chat-date" id="chatDate"></div>
+            <div class="msg nexa-msg">
+                <div class="av"><i class="fas fa-robot"></i></div>
+                <div class="bubble">
+                    Hello Gagan! I am <strong>Nexa</strong>, your personal AI assistant.<br>
+                    Try: <em>"Tell me a joke"</em>, <em>"Open YouTube"</em>, <em>"What time is it?"</em>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visualizer -->
+        <div class="visualizer" id="visualizer">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <!-- Mic Button -->
+        <button class="mic-btn" id="btn">
+            <div class="mic-circle"><i class="fas fa-microphone" id="micIcon"></i></div>
+            <span id="content">Click to speak</span>
+        </button>
+
+        <!-- Text Input -->
+        <div class="input-wrap">
+            <input type="text" id="textInput" placeholder="Or type your command here..." autocomplete="off">
+            <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+
+        <!-- Quick Commands -->
+        <p class="chips-label">Quick Commands</p>
+        <div class="chips">
+            <button class="chip" onclick="window.runCmd('joke')"><i class="fas fa-laugh"></i> Joke</button>
+            <button class="chip" onclick="window.runCmd('fun fact')"><i class="fas fa-lightbulb"></i> Fun Fact</button>
+            <button class="chip" onclick="window.runCmd('open youtube')"><i class="fab fa-youtube"></i> YouTube</button>
+            <button class="chip" onclick="window.runCmd('open google')"><i class="fab fa-google"></i> Google</button>
+            <button class="chip" onclick="window.runCmd('open github')"><i class="fab fa-github"></i> GitHub</button>
+            <button class="chip" onclick="window.runCmd('open gmail')"><i class="fas fa-envelope"></i> Gmail</button>
+            <button class="chip" onclick="window.runCmd('open whatsapp')"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+            <button class="chip" onclick="window.runCmd('what time is it')"><i class="fas fa-clock"></i> Time</button>
+            <button class="chip" onclick="window.runCmd('what is today date')"><i class="fas fa-calendar"></i> Date</button>
+            <button class="chip" onclick="window.runCmd('open spotify')"><i class="fas fa-music"></i> Music</button>
+            <button class="chip" onclick="window.runCmd('open netflix')"><i class="fas fa-film"></i> Netflix</button>
+            <button class="chip" onclick="window.runCmd('weather')"><i class="fas fa-cloud-sun"></i> Weather</button>
+        </div>
+
+        <!-- History -->
+        <button class="hist-btn" id="histBtn"><i class="fas fa-history"></i> Command History</button>
+        <div class="hist-panel" id="histPanel"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
